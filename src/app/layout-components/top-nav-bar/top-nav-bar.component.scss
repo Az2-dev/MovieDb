@@ -1,0 +1,21 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+    min-height: 3.75rem !important;
+    max-height: 3.75rem !important;
+}
+
+.app-image-banner {
+    height: 90%;
+    filter: brightness(0) invert(1);
+}
+
+.toolbar-mini-spacer {
+    margin-right: 0.6rem;
+}
+
+.toolbar-content-spacer {
+    flex: 1 1 auto;
+}
+
+.nav-button-icon {
+    margin: 0 0.5rem;
+}

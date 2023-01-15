@@ -1,0 +1,65 @@
+@import '~simplebar/dist/simplebar.css';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-100-vh {
+    height:  100vh;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.f-row {
+    flex-direction: row;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.section-header-title {
+    height: 2.625rem;
+    color: #3C3C3C;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    position: relative;
+    margin-bottom: 2.75rem;
+}
+
+.section-header-title::after {
+    content: '';
+    height: 0.188rem;
+    width: 1.875rem;
+    background-color: #c1272d;
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+}

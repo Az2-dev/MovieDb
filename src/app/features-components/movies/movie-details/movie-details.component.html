@@ -1,0 +1,93 @@
+<div *ngIf="movieDetails" class="movie-details-banner">
+    <mat-card class="movie-details-poster-card">
+        <img mat-card-image class="movie-details-poster-img" [src]="posterUrl">
+        <mat-card-actions *ngIf="movieDetails.homepage"
+                          class="movie-item-card-actions">
+            <button mat-button (click)="onClickShowMovieHomepageBtnHandler()">
+                VOIR LA PAGE OFFICIELE DU FILM
+            </button>
+        </mat-card-actions>
+
+        <mat-card-actions *ngIf="!movieDetails.homepage"
+                          class="movie-item-card-actions">
+            <button mat-button (click)="onClickSearchMovieInGoogleBtnHandler()">
+                CHERCHER LE FILM SUR GOOGLE
+            </button>
+        </mat-card-actions>
+        <div >
+            <button mat-icon-button color="accent"  style="margin-right:  40% " >
+                <mat-icon>mood</mat-icon>
+                <label>Like : {{countLike}}</label>
+            </button>
+            <button mat-icon-button color="accent"  style=" ">
+                <mat-icon>mood_bad</mat-icon>
+                <label>Dislike : {{countDislike}}</label>
+            </button>
+        </div>
+
+    </mat-card>
+    <div class="movie-details-banner-details">
+        <h2>{{movieDetails.title}}</h2>
+        <h3>Titre Originale : <b>{{movieDetails.original_title}}</b></h3>
+        <h4 *ngIf="movieDetails.tagline">Tagline : <b>{{movieDetails.tagline}}</b></h4>
+        <h4>Date de sortie : <b>{{movieDetails.release_date}}</b></h4>
+        <h4>Durée du film : <b>{{movieDetails.runtime}} min</b></h4>
+        <mat-chip-list *ngIf="movieDetails.genres" style="margin: 0.5rem 0">
+            <h4 style="margin: auto 0">
+                Categorie(s) :
+            </h4>
+            <ng-container *ngFor="let category of movieDetails.genres">
+                <mat-chip>
+                    {{category.name}}
+                </mat-chip>
+            </ng-container>
+        </mat-chip-list>
+        <mat-chip-list *ngIf="movieDetails.genres" style="margin: 0.5rem 0">
+            <h4 style="margin: auto 0">
+                Note par les utilisateurs (TMDB) :
+            </h4>
+            <mat-chip>
+                {{(movieDetails.vote_average / 10) | percent}}
+            </mat-chip>
+        </mat-chip-list>
+        <div class="movie-details-overview">
+            <h4>
+                <b>Synopsis : </b>
+            </h4>
+            <p>{{movieDetails.overview}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="movieDetails" class="movie-details-video">
+    <app-section-header-title sectionTitle="VIDÉOS"></app-section-header-title>
+
+    <div class="m-auto">
+        <div class="movie-videos-datagrid-container">
+            <ng-container *ngFor="let video of movieVideosItems">
+                <iframe title="{{video}}"
+                        [src]="video.videoUrl"
+                        autoplay
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<div class="movie-details-banner ">
+    <mat-form-field class="comment" >
+        <mat-label style="color: black">Ecrit to commentaire</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        <hr>
+        <div class="butt">
+            <button mat-button class="commentbutton">
+                Laisser un commentaire
+            </button>
+        </div>
+    </mat-form-field>
+</div>
+
+

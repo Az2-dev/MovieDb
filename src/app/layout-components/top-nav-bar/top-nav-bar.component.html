@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <img class="app-image-banner" src="assets/images/emi-az-mdb.png">
+    <span class="toolbar-mini-spacer"></span>
+    <button mat-icon-button
+            class="nav-button-icon"
+            (click)="onClickToggleSideNavBarBtnHandler()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-mini-spacer"></span>
+    <button mat-icon-button
+            class="nav-button-icon"
+            matTooltip="home"
+            (click)="onClickHomeBtnHandler()">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button
+            class="nav-button-icon"
+            matTooltip="films populaires"
+            (click)="onClickPopularMoviesBtnHandler()">
+        <mat-icon>favorite</mat-icon>
+    </button>
+
+    <mat-form-field style="width: 30%; padding: 0.5rem; font-size: 0.8rem">
+        <input matInput [(ngModel)]="searchInput" (input)="onClickSearchMovieByName()" placeholder="Search Input">
+    </mat-form-field>
+    <button mat-icon-button
+            (keyup.enter)="onClickSearchMovieByName()"
+            (click)="onClickSearchMovieByName()"
+            class="nav-button-icon"
+            matTooltip="search movies">
+        <mat-icon>search</mat-icon>
+    </button>
+    <span class="toolbar-mini-spacer"></span>
+    <app-auth-button></app-auth-button>
+
+</mat-toolbar>

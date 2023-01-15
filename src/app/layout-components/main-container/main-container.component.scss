@@ -1,0 +1,21 @@
+.main-app-container {
+    margin: auto auto;
+    width: 100%;
+    height: calc(100% - 3.75rem);
+    background-color: #F7F7F7;
+}
+
+
+.rnp-sidenav {
+    max-width: 17.5rem;
+    min-width: 17.5rem;
+    overflow: hidden !important;
+    border-color: transparent !important;
+}
+
+
+.main-content-container {
+    height: 100%;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+}

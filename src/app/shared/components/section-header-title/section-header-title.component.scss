@@ -1,0 +1,24 @@
+.section-header {
+    margin: 1rem 1rem;
+}
+
+.section-header-title {
+    height: 2.625rem;
+    color: #3C3C3C;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    position: relative;
+    margin-bottom: 2.75rem;
+}
+
+.section-header-title::after {
+    content: '';
+    height: 0.188rem;
+    width: 1.875rem;
+    background-color: #c1272d;
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+}

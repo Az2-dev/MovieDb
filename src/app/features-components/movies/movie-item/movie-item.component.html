@@ -1,0 +1,22 @@
+<mat-card class="movie-item-card">
+    <mat-card-header>
+        <mat-card-title>{{movieItem.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="movie-item-poster" [src]="posterUrl">
+    <mat-card-content>
+        <mat-chip-list>
+            <mat-chip [matTooltip]="movieItem.overview">
+                OVERVIEW
+            </mat-chip>
+            <mat-chip>
+                NOTE : {{(movieItem.vote_average / 10) | percent}}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions class="movie-item-card-actions">
+        <button mat-button (click)="onClickShowMovieDetailsBtnHandler()">
+            VOIR PLUS DE DETAILS
+        </button>
+        <img src="../../../../assets/images/favorisicon.png" class="favoris" (click)="addToFavoris(movieItem.id)">
+    </mat-card-actions>
+</mat-card>

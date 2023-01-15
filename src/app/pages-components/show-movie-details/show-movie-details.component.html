@@ -1,0 +1,10 @@
+<ng-container *ngIf="loaded">
+    <app-movie-details [movieDetails]="movieDetails"
+                       [movieVideos]="movieVideos">
+    </app-movie-details>
+</ng-container>
+<ng-container *ngIf="!loaded">
+    <div class="w-100 h-100-vh d-flex justify-center">
+        <mat-spinner class="m-auto"></mat-spinner>
+    </div>
+</ng-container>

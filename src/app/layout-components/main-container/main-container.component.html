@@ -1,0 +1,16 @@
+<app-top-nav-bar (toggleSideNavBarBtnOutputEmitter)="toggleSideNavBarBtnOutputEmitterHandler($event, drawer)"
+                 class="main-app-header-toolbar"
+                 role="banner">
+</app-top-nav-bar>
+<mat-drawer-container autosize class="main-app-container">
+    <mat-drawer #drawer class="rnp-sidenav" mode="side">
+        <app-side-nav-bar></app-side-nav-bar>
+    </mat-drawer>
+    <div [ngClass]="(sideNaveOpened) ? 'rnp-sidenav-opened' : 'rnp-sidenav-closed'"
+         class="main-content-container"
+         role="main"
+         data-simplebar>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+

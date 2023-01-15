@@ -1,0 +1,7 @@
+<div class="movies-datagrid-container">
+    <ng-container *ngIf="movies">
+        <ng-container *ngFor="let movie of movies.results">
+            <app-movie-item [movieItem]="movie"></app-movie-item>
+        </ng-container>
+    </ng-container>
+</div>

@@ -1,0 +1,18 @@
+<ng-container *ngIf="loaded">
+    <app-movies-datagrid [movies]="searchedMovies"></app-movies-datagrid>
+    <div>
+        <mat-paginator #paginator
+                       [length]="searchedMovies.total_results"
+                       [pageSize]="20"
+                       (page)="setSearchedMoviesWithPageNumber($event.pageIndex + 1)"
+                       [showFirstLastButtons]="true"
+                       [hidePageSize]="true"
+                       [pageIndex]="pageIndex - 1">
+        </mat-paginator>
+    </div>
+</ng-container>
+<ng-container *ngIf="!loaded">
+    <div class="w-100 h-100-vh d-flex justify-center">
+        <mat-spinner class="m-auto"></mat-spinner>
+    </div>
+</ng-container>
